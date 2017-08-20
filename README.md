@@ -1,6 +1,14 @@
 # python-tools
 For the last few days I've been learning python, here's a few tools I've made in the process
 
+### PoseSaver tool :
+Call LoadPoseSaver() to launch pose saver, 
+make sure you have set up your icon path before attempting to use this script.
+- Click add pose to add currently selected controllers to the saved pose
+- Click load setup to load previously saved poses from file 
+- Click save setup to save current poses to file
+Saved setups will be saved and loaded from the folder of the open maya file
+
 ### LightControllerV2 tool :
 <a href="http://imgur.com/WS5mWv1"><img src="http://imgur.com/WS5mWv1" title="gif"/></a>
 collects all the lights in the scene in one window and alows you to change visibility, color and intensity
