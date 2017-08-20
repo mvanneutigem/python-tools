@@ -9,6 +9,7 @@ When you create a pose it automatically takes a screenshot of the created pose.
 - Click add pose to add currently selected controllers to the saved pose
 - Click load setup to load previously saved poses from file 
 - Click save setup to save current poses to file
+
 Saved setups will be saved and loaded from the folder of the open maya file
 
 ### LightControllerV2 tool :
