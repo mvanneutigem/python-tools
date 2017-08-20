@@ -6,6 +6,7 @@ For the last few days I've been learning python, here's a few tools I've made in
 Call LoadPoseSaver() to launch pose saver,
 
 make sure you have set up your icon path before attempting to use this script.
+
 When you create a pose it automatically takes a screenshot of the created pose.
 - Click add pose to add currently selected controllers to the saved pose
 - Click load setup to load previously saved poses from file 
