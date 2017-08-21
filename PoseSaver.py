@@ -61,7 +61,7 @@ def ShowGroup(g):
         cmds.deleteUI(title)
 
     name = g.GetName()
-    title = cmds.frameLayout ( name, collapsable = True, parent = "columnLayout01")
+    title = cmds.frameLayout ( label=name, collapsable = True, parent = "columnLayout01")
     fullPath = path + name + ".png"
     setpose = cmds.iconTextButton( style='iconOnly', image1=fullPath, label='set pose', command=partial(set,g) )
     remove = cmds.button( label='delete', command=partial(remove,g))
