@@ -1,11 +1,9 @@
-#author: marieke van neutigem 2017
 import maya.cmds as cmds
 import os
 from functools import partial
 
-#saved setups will be saved and loaded from the folder of the open maya file
-#point this path to a folder where you want to save icons on your computer -->
-path = "C:/Users/Marieke/Documents/DAE/summer/scripts/icons/"
+#point this path to a folder where you want to save icons/savefiles on your computer -->
+path = "C:/Users/Marieke/Documents/DAE/summer/niels/icons/"
 
 if not os.path.exists(path):
     os.makedirs(path)#create folder if not exists
@@ -94,10 +92,12 @@ def LoadPoseSaver():
         print keys
         for k in keys:
             o = obj(k)
-            attributes = cmds.listAttr(k, k=True, type=['float', 'int'])
+            attributes = cmds.listAttr(k, k=True)
             for a in attributes:
                 attr = k + '.' + a
-                o.AddAttr(a, cmds.getAttr(attr))
+                value = cmds.getAttr(attr)
+                if type(value) is float:
+                    o.AddAttr(a, cmds.getAttr(attr))
             keyList.append(o)
         
         #name group
@@ -132,7 +132,7 @@ def LoadPoseSaver():
     def LoadSetup(filename):
         #load previous saved setup from file   
         counter = 0            
-        readFile = open(filename + ".txt", "r")
+        readFile = open(path + filename + ".txt", "r")
         if readFile.readline() != "POSESAVER\n":
             print "error expected POSESAVER"
             return
@@ -189,7 +189,7 @@ def LoadPoseSaver():
     
     def SaveSetup(filename):
         #write current setup to file
-        savefile = open(filename + '.txt', 'w')
+        savefile = open(path + filename + '.txt', 'w')
         savefile.write('POSESAVER\n')
         savefile.write(str(len(keyGroups)) + '\n')#nrofgroups
         for kGroup in keyGroups:
